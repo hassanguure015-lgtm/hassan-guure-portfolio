@@ -1,0 +1,86 @@
+/* ===== Variables (midabada iyo farta halkan ka beddel) ===== */
+:root{
+  --bg:#f6f7f2; --surface:#ffffff; --text:#1b2a2f; --muted:#5b6b70;
+  --accent:#1f6f5c; --accent-2:#e9b44c; --line:#d9ddd4;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121a1c;--surface:#1a2427;--text:#eef1ec;--muted:#9fb0b4;--accent:#5fc4a8;--line:#2c3a3e}
+}
+
+/* ===== Base ===== */
+html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--sans)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.logo{font:800 1.3rem var(--serif);text-decoration:none}
+.menu{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
+.menu a{text-decoration:none;font-weight:500;color:var(--muted)}
+.menu a:hover{color:var(--accent)}
+.toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:.45rem .8rem;font:inherit;cursor:pointer}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
+.hero h1{font:800 clamp(2.4rem,6vw,4.4rem)/1.05 var(--serif);margin:0 0 1.2rem;letter-spacing:-.02em}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.1rem;margin:0 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#fff}
+.portrait{aspect-ratio:4/5;border-radius:48% 52% 46% 54%/40% 44% 56% 60%;background:linear-gradient(145deg,var(--accent),var(--accent-2));overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+
+/* ===== Sections ===== */
+section{padding:4rem 0}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--serif);margin:0 0 .6rem}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 2.2rem}
+
+/* ===== About / Skills ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0}
+.skills li{border:1px solid var(--line);background:var(--surface);padding:.4rem .9rem;border-radius:8px;font-weight:500}
+
+/* ===== Projects ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.thumb{aspect-ratio:16/10;overflow:hidden;background:var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:1.2rem 1.3rem 1.5rem}
+.card h3{margin:0 0 .4rem;font:600 1.2rem var(--serif)}
+.card p{margin:0 0 .8rem;color:var(--muted);font-size:.95rem}
+.tags{font-size:.85rem;color:var(--accent);font-weight:600}
+
+/* ===== Contact ===== */
+form{display:grid;gap:1rem;max-width:560px}
+label{font-weight:600;display:grid;gap:.35rem}
+input,textarea{font:inherit;padding:.75rem .9rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+textarea{min-height:140px;resize:vertical}
+button.btn{cursor:pointer;font:inherit;font-weight:600;justify-self:start}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+
+/* ===== Responsive: Tablet ===== */
+@media (max-width:860px){
+  .hero,.about{grid-template-columns:1fr}
+  .portrait{max-width:280px;order:-1}
+  .hero{padding-top:3rem}
+}
+
+/* ===== Responsive: Mobile ===== */
+@media (max-width:640px){
+  .toggle{display:block}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .menu a{display:block;padding:.9rem 1.25rem}
+  section{padding:3rem 0}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}

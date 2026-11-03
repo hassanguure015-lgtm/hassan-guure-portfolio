@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hassan Guure – Web Developer Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main">
+        <a class="logo" href="#home">Hassan Guure</a>
+        <button class="toggle" id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul class="menu" id="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <h1>Waxaan fikradaha u beddelaa hal-abuur muuqda.</h1>
+        <p>Salaan! Waxaan ahay Hassan Mohamed Osman (Hassan Guure), naqshadeeye garaafeed, tifaftire muuqaal iyo khabiir suuq-geyn dijitaal ah. Waxaan xiiseeyaa hal-abuurka, teknoolojiyadda iyo dhisidda xalal dijitaal ah oo ganacsiyada ka caawiya inay horumar sameeyaan.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">Eeg Shaqooyinkayga</a>
+          <a class="btn ghost" href="#contact">Ila Soo Xiriir</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="xasan.png" alt="Portrait of Hassan Guure">
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <h2>About me</h2>
+          <p class="lead">Waxaan ahay qof hal-abuur jecel oo ku shaqeeya naqshadeynta garaafyada, tafatirka muuqaallada iyo suuq-geynta dijitaalka ah.
+
+Waxaan ahay aasaasaha iyo Agaasimaha Hal-abuurka ee Arko media, halkaas oo aan diiradda ku saaro abuurista naqshado qurux badan, muuqaallo tayo leh iyo fikrado suuq-geyn oo ganacsiyada ka caawiya inay gaaraan macaamiishooda.
+
+Waxaan si joogto ah u horumariyaa xirfadahayga, gaar ahaan dhinaca Web Development, si aan u yeesho awood aan ku abuuro adeegyo iyo xalal dijitaal ah oo casri ah.</p>
+          <p class="lead">Replace this text with your own story.</p>
+        </div>
+        <div>
+          <h2>Skills</h2>
+          <ul class="skills">
+            <li>Graphic design</li><li>Motion design</li><li>Video editing</li><li>Expert Lecture </li><li>Digital Marketing</li><li>front-end dev</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="Shaqooyinkayga">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <p class="lead">Halkan waxaad ka arki kartaa qaar ka mid ah mashaariicda iyo shaqooyinka aan ka qabtay .</p>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img src="Ogaal_solV2 Website.jpg" alt="Ogaal Solutions">
+            </div>
+            <div class="card-body"><h3>Ogaal Solutions</h3><p>Abuurista naqshadaha xayeysiiska, qoraallada muuqaalka iyo qorshaha suuq-geynta baraha bulshada.</p><span class="tags"></span></div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="Siddo  Kishahs bags.jpg" alt="Siddo Bags">
+            </div>
+            <div class="card-body"><h3>SIDDO Bags</h3><p>Naqshadeynta xayeysiisyada iyo diyaarinta fikradaha ololayaasha suuq-geynta ee bacaha deegaanka u wanaagsan.</p><span class="tags"></span></div>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="poster_SSS_V3.png" alt="Somali Surgical Society
+">
+            </div>
+            <div class="card-body"><h3>Somali Surgical Society</h3><p>Ka shaqeynta naqshadeynta garaafyada, diyaarinta agabka xayeysiiska iyo abuurista muuqaalada loogu talagalay wacyigelinta iyo soo bandhigista hawlaha ururka..</p><span class="tags"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="lead">Have a project or a question? Send a message.</p>
+        <form action="#" onsubmit="event.preventDefault();this.querySelector('button').textContent='Message sent';">
+          <label>Name <input type="text" name="name" required autocomplete="name"></label>
+          <label>Email <input type="email" name="email" required autocomplete="email"></label>
+          <label>Message <textarea name="message" required></textarea></label>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© 2026 Hassan Guure. Built with HTML and CSS.</div></footer>
+
+  <script>
+    // Mobile menu toggle
+    var t = document.getElementById('toggle'), m = document.getElementById('menu');
+    t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+    });
+    m.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded', false); }
+    });
+  </script>
+</body>
+</html>
